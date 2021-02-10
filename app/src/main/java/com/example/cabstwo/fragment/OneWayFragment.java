@@ -5,62 +5,33 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.SearchView;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
-import com.androidnetworking.AndroidNetworking;
-import com.androidnetworking.common.Priority;
-import com.androidnetworking.error.ANError;
-import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.cabstwo.R;
 import com.example.cabstwo.activity.CabList;
-import com.example.cabstwo.adapter.PlaceAutoSuggestAdapter;
-import com.example.cabstwo.adapter.SimpleListAdapter;
-import com.example.cabstwo.util.RxSearchObservable;
 import com.google.android.gms.common.api.Status;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
-import java.util.concurrent.TimeUnit;
-
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
-import io.reactivex.rxjava3.annotations.NonNull;
-import io.reactivex.rxjava3.core.Observable;
-import io.reactivex.rxjava3.core.ObservableSource;
-import io.reactivex.rxjava3.core.Observer;
-import io.reactivex.rxjava3.disposables.Disposable;
-import io.reactivex.rxjava3.functions.Function;
-import io.reactivex.rxjava3.functions.Predicate;
-import io.reactivex.rxjava3.schedulers.Schedulers;
 
 import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
@@ -75,8 +46,7 @@ public class OneWayFragment extends Fragment
     TextView searchView;
     TextView rvDestination;
     RecyclerView recyclerView,recyclerView11;
-    SimpleListAdapter simpleListAdapter;
-    List<String> resultList;
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -199,46 +169,6 @@ public class OneWayFragment extends Fragment
 
         edittext.setText(sdf.format(myCalendar.getTime()));
     }
-
-////    public void autoComplete(String input,SimpleListAdapter sAdapter, List<String> lList) {
-////        List<String> arrayList = new ArrayList();
-////
-////
-////        StringBuilder sb = new StringBuilder("https://maps.googleapis.com/maps/api/place/autocomplete/json?");
-////        sb.append("input=" + input);
-////        sb.append("&components=country:in");
-////        sb.append("&key=" + getString(R.string.mapp_pi));
-////
-////        AndroidNetworking.get(sb.toString())
-////                .setPriority(Priority.HIGH)
-////                .build()
-////                .getAsJSONObject(new JSONObjectRequestListener() {
-////                    @Override
-////                    public void onResponse(JSONObject response) {
-////                        try {
-////                            JSONObject jsonObject = new JSONObject(response.toString());
-////                            JSONArray predictions = jsonObject.getJSONArray("predictions");
-////                            for (int i = 0; i < predictions.length(); i++) {
-////                                arrayList.add(predictions.getJSONObject(i).getString("description"));
-////                                Log.d("PlacesApi :", String.valueOf(predictions.getJSONObject(i).getString("description")));
-////                            }
-////                            lList.addAll(arrayList);
-////                            sAdapter.notifyDataSetChanged();
-////
-////                        } catch (JSONException e) {
-////                            e.printStackTrace();
-////                        }
-////                    }
-////
-////                    @Override
-////                    public void onError(ANError anError) {
-////                        Log.d("PlacesApi :", String.valueOf(anError));
-////                    }
-////                });
-//
-//
-//       // return arrayList;
-//    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

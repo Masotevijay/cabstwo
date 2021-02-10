@@ -1,19 +1,16 @@
 package com.example.cabstwo.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.cabstwo.R;
-import com.example.cabstwo.model.Users;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -60,8 +57,8 @@ public class Sign_upActivity extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         // FirebaseUser user = mAuth.getCurrentUser();
                                         Toast.makeText(Sign_upActivity.this, "Register Successully", Toast.LENGTH_SHORT).show();
-                                        Users users = new Users(userName, email, city);
-                                        databaseReference.child("users").child(userName).setValue(users);
+                                        // Users users = new Users(userName, email, city);
+                                        // databaseReference.child("users").child(userName).setValue(users);
                                         startActivity(new Intent(getApplicationContext(), Login.class));
                                         finish();
                                     } else {

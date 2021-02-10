@@ -1,13 +1,8 @@
-package com.example.cabstwo.activity;
+package com.example.cabstwo.adapter;
 
-import android.view.View;
-import android.widget.Switch;
-
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.cabstwo.fragment.FriFragment;
 import com.example.cabstwo.fragment.MonFragment;
