@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:title="Select One"
+    android:gravity="center_horizontal"
+    app:titleTextColor="@color/white"
+    android:background="@color/quantum_orange"
+    tools:ignore="MissingConstraints" />
+
+    <include
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/activity_cab_list"/>
+</LinearLayout>

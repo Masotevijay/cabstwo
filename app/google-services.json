@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "653683876010",
+    "project_id": "cabstwo-a24c6",
+    "storage_bucket": "cabstwo-a24c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653683876010:android:96f7444ee43234365c70d3",
+        "android_client_info": {
+          "package_name": "com.example.cabstwo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653683876010-kvfhohuua8tsrs69kdbtn48drcd3pv9f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZS2UgWOjWwt1j6NwJ-s1RqBi0lHyvRDg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653683876010-kvfhohuua8tsrs69kdbtn48drcd3pv9f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
